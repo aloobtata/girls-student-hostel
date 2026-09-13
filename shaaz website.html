@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholars Heaven - Premium Female Student Hostel</title>
+    <style>
+        /* --- Reset & Base Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #7dd3fc;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #1e293b;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #f8fafc;
+        }
+
+        /* --- Layout Sections --- */
+        section {
+            padding: 6rem 2rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            max-width: 650px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #0369a1;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #7dd3fc;
+        }
+
+        /* --- Section Titles --- */
+        h2.section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background-color: #38bdf8;
+            border-radius: 2px;
+        }
+
+        /* --- About Grid --- */
+        .about-content {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        /* --- Features Grid --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #334155;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #f8fafc;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        /* --- Contact Section --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .info-box {
+            background-color: #1e293b;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item h4 {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .info-item p, .info-item a {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 0.75rem;
+            border-radius: 6px;
+            color: #f8fafc;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Scholars Heaven</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#facilities">Facilities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="badge">Female Student Hostel</div>
+        <h1>Welcome to <span>Scholars Heaven</span></h1>
+        <p>A safe, comfortable, and study-friendly environment designed specifically for female students in Nagpur.</p>
+        <div class="btn-group">
+            <a href="tel:+919096144467" class="btn">Call Us Now</a>
+            <a href="#contact" class="btn btn-secondary">Location & Inquiry</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Scholars Heaven</h2>
+        <div class="about-content">
+            <p>
+                Scholars Heaven is a dedicated hostel facility for female students, offering a secure, calm, and well-maintained living space. Conveniently located in Sadar, Nagpur, our hostel ensures easy access to educational institutes while providing a peaceful atmosphere suitable for focused learning.
+            </p>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Safe & Secure</h3>
+                <p>Round-the-clock security and a safe atmosphere designed specifically for female students.</p>
+            </div>
+            <div class="card">
+                <h3>Prime Location</h3>
+                <p>Situated in Sadar with convenient access to markets, transportation, and study hubs.</p>
+            </div>
+            <div class="card">
+                <h3>Peaceful Environment</h3>
+                <p>A quiet and distraction-free setting tailored for academic focus and comfortable living.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact & Location</h2>
+        <div class="contact-container">
+            
+            <!-- Details Box -->
+            <div class="info-box">
+                <div class="info-item">
+                    <h4>Address</h4>
+                    <p>Tekdi Road, Near Phenava Boutique,<br>Sadar, Nagpur, Maharashtra</p>
+                </div>
+                <div class="info-item">
+                    <h4>Phone Number</h4>
+                    <p><a href="tel:+919096144467">+91 90961 44467</a></p>
+                </div>
+                <div class="info-item">
+                    <h4>Hostel Type</h4>
+                    <p>Exclusive Hostel for Female Students</p>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you for reaching out! We will contact you soon.');">
+                <div class="form-group">
+                    <label for="name">Student / Parent Name</label>
+                    <input type="text" id="name" required placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="Enter phone number">
+                </div>
+                <div class="form-group">
+                    <label for="message">Inquiry / Message</label>
+                    <textarea id="message" required placeholder="Ask about room availability, fees, or visit timings..."></textarea>
+                </div>
+                <button type="submit" class="btn">Send Inquiry</button>
+            </form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Scholars Heaven. All Rights Reserved. | Sadar, Nagpur</p>
+    </footer>
+
+</body>
+</html>
